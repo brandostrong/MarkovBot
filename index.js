@@ -3,6 +3,11 @@ const { Client, Collection, Intents, Channel } = require('discord.js')
 const { token } = require('./config.json')
 const fs = require('fs')
 
+const Dictionary = require('./markov/markov.js')
+const Dic = Dictionary.Dictionary
+dic = new Dic()
+
+//this.dic.parse('hello my name is')
 // Create a new client instance
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] })
 client.commands = new Collection()
